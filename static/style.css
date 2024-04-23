@@ -32,7 +32,7 @@ body {
   margin: 0px 20px;
   background-color: rgb(255, 227, 174);
   border-bottom-style: solid ;
-  border-bottom-color:rgb(92, 92, 92);;
+  border-bottom-color:rgb(102, 92, 0);;
   align-content: center;
   text-align: center;
   border-radius: 20px 20px 0px 0px;
@@ -92,14 +92,42 @@ body {
     margin-bottom: 15px;
 }
 
-input[type="range"] {
-  accent-color: #c69774;
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #FF6B6B;
+  background-image: linear-gradient(43deg, #FF6B6B 0%, #FFD93D 46%, #6BCB77 100%);
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
 }
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #4c00ff;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #0093E9;
+  cursor: pointer;
+}
+
 
 .pass-settings {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center horizontally */
+  align-items: center; 
 }
 
 .pass-settings label[id="settings"]{
@@ -109,8 +137,9 @@ input[type="range"] {
 
 .pass-settings .options {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 40px;
+  row-gap: 20px;
   margin-top: 1rem;
 }
 
@@ -142,6 +171,7 @@ input[type="range"] {
 .generate-btn {
   border: 1px solid #bbb;
   background-color: #c69774;
+  margin-top: 15px;
   margin-bottom: 15px;
   color: #ffffff;
   font-weight: 600;
