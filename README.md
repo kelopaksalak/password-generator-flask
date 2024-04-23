@@ -1,1 +1,3 @@
-"# password-generator-flask" 
+# Password Generator
+
+![alt text](image.png)
