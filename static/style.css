@@ -71,7 +71,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   margin-bottom: 10px;
 }
 
@@ -190,4 +189,33 @@ body {
   border: none;
   padding: 10px 20px;
 }
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 90%;
+  }
+
+  .title h2 {
+    font-size: 1.3rem;
+  }
+
+  .input-box input {
+    width: 100%;
+  }
+
+  .pass-length input {
+    
+    width: 100%;
+  }
+
+  .pass-settings .options {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 10px;
+  }
+
+  .generate-btn {
+    width: 100%;
+  }
+}
+
 
