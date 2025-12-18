@@ -9,10 +9,20 @@ app.config['SECRET_KEY'] = 'pqKsBMgJoNZRueiuhCOm'
 def generatePass():
     characters = ""
     use_password = ""
+    # default password length displayed when page first loads
+    current_length = 10
+
     if request.method == "POST":
         # get password length
-        length = request.form.get('length')
-        lengths = int(length)
+        length = request.form.get('length', current_length)
+        try:
+            lengths = int(length)
+        except (TypeError, ValueError):
+            flash("ERROR INVALID LENGTH")
+            return redirect(url_for('generatePass'))
+
+        # remember the last chosen length so it stays after generating
+        current_length = lengths
 
         # get password condition
         use_lowercase = True if request.form.get('lowercase') else False
@@ -39,7 +49,7 @@ def generatePass():
             flash("ERROR PLEASE CHOOSE MORE THAN 0 LENGTH")
             return redirect(url_for('generatePass'))
 
-    return render_template('index.html', user_password = use_password)
+    return render_template('index.html', user_password = use_password, length=current_length)
 
 
 if __name__ == '__main__':

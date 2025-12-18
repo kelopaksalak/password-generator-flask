@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="D:\Python\password-generator-v2\.venv"
+VIRTUAL_ENV="D:\Programming\Python\Password Generator\password-generator-flask\.venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
